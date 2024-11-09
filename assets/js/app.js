@@ -6,22 +6,22 @@ canvas.height = window.innerHeight;
 const embers = [];
 const emberCount = 200;
 
-// Ember particle settings
+
 const emberSettings = {
   maxSize: 9,
   minSize: 9,
   maxSpeed: 9,
   minSpeed: 0.9,
-  color: "rgba(255, 69, 0, 0.7)", // Orange-red color with transparency
+  color: "rgba(255, 69, 0, 0.7)", 
 };
 
-// Adjust canvas size on resize
+
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
 
-// Ember particle class
+
 class Ember {
   constructor() {
     this.reset();
@@ -52,17 +52,17 @@ class Ember {
   draw() {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-    ctx.fillStyle = this.color.replace("0.7", this.opacity.toFixed(2)); // Adjust opacity
+    ctx.fillStyle = this.color.replace("0.7", this.opacity.toFixed(2)); 
     ctx.fill();
   }
 }
 
-// Create initial embers
+
 for (let i = 0; i < emberCount; i++) {
   embers.push(new Ember());
 }
 
-// Animation loop
+
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
